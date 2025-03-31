@@ -7,6 +7,9 @@ const Navbar = () => {
         <Link to="/">MoralMentor</Link>
       </h1>
       <ul className="flex space-x-4">
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/flipcards">FlipCards</Link></li>
+        <li><Link to="/hub">Learning hub</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Signup</Link></li>
         <li><Link to="/quiz">Quiz</Link></li>
