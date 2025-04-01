@@ -53,7 +53,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/resources"
-            className={`hover:text-purple-400 ${location.pathname === "/signup" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-400 ${location.pathname === "/resources" ? "text-purple-500 font-semibold" : ""}`}
           >
             Resources
           </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/dashboard"
-            className={`hover:text-purple-400 ${location.pathname === "/signup" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-400 ${location.pathname === "/dashboard" ? "text-purple-500 font-semibold" : ""}`}
           >
             Dashboard
           </Link>
