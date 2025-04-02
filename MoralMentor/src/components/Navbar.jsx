@@ -6,9 +6,12 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
       <h1 className="text-xl font-bold">
-        <Link to="/">MoralMentor</Link>
+        <Link to="/" className="flex items-center space-x-2">
+        <img src="/src/assets/mainLogo.png" alt="MoralMentor Logo" className="w-10 h-10" />
+        <span className="text-lg font-semibold">MoralMentor</span>
+        </Link>
       </h1>
-      <ul className="flex space-x-4">
+      <ul className="flex items-center justify-center space-x-4">
         <li>
           <Link 
             to="/about"
@@ -35,21 +38,12 @@ const Navbar = () => {
         </li>
         <li>
           <Link 
-            to="/quiz"
-            className={`hover:text-purple-400 ${location.pathname === "/quiz" ? "text-purple-500 font-semibold" : ""}`}
-          >
-            Quiz
-          </Link>
-        </li>
-        <li>
-          <Link 
             to="/debates"
             className={`hover:text-purple-400 ${location.pathname === "/debates" ? "text-purple-500 font-semibold" : ""}`}
           >
             Debates
           </Link>
         </li>
-
         <li>
           <Link 
             to="/resources"
@@ -58,31 +52,11 @@ const Navbar = () => {
             Resources
           </Link>
         </li>
-
         <li>
           <Link 
             to="/dashboard"
-            className={`hover:text-purple-400 ${location.pathname === "/dashboard" ? "text-purple-500 font-semibold" : ""}`}
           >
-            Dashboard
-          </Link>
-        </li>
-
-        <li>
-          <Link 
-            to="/login"
-            className={`hover:text-purple-400 ${location.pathname === "/login" ? "text-purple-500 font-semibold" : ""}`}
-          >
-            Login
-          </Link>
-        </li>
-
-        <li>
-          <Link 
-            to="/signup"
-            className={`hover:text-purple-400 ${location.pathname === "/signup" ? "text-purple-500 font-semibold" : ""}`}
-          >
-            Signup
+            <img src="/src/assets/dashboard3.png" alt="Dashboard Logo" className="w-10 h-10" />
           </Link>
         </li>
       </ul>
