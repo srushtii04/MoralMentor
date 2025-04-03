@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 
+
 const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
+    <nav className="bg-purple-800 text-white p-4 flex justify-between items-center">
       <h1 className="text-xl font-bold">
         <Link to="/" className="flex items-center space-x-2">
         <img src="/src/assets/mainLogo.png" alt="MoralMentor Logo" className="w-10 h-10" />
@@ -15,7 +16,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/about"
-            className={`hover:text-purple-400 ${location.pathname === "/about" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-300 ${location.pathname === "/about" ? "text-purple-400 font-semibold" : ""}`}
           >
             About
           </Link>
@@ -23,7 +24,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/flipcards"
-            className={`hover:text-purple-400 ${location.pathname === "/flipcards" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-300 ${location.pathname === "/flipcards" ? "text-purple-400 font-semibold" : ""}`}
           >
             FlipCards
           </Link>
@@ -31,7 +32,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/hub"
-            className={`hover:text-purple-400 ${location.pathname === "/hub" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-300 ${location.pathname === "/hub" ? "text-purple-400 font-semibold" : ""}`}
           >
             Learning Hub
           </Link>
@@ -39,7 +40,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/debates"
-            className={`hover:text-purple-400 ${location.pathname === "/debates" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-300 ${location.pathname === "/debates" ? "text-purple-400 font-semibold" : ""}`}
           >
             Debates
           </Link>
@@ -47,7 +48,7 @@ const Navbar = () => {
         <li>
           <Link 
             to="/resources"
-            className={`hover:text-purple-400 ${location.pathname === "/resources" ? "text-purple-500 font-semibold" : ""}`}
+            className={`hover:text-purple-300 ${location.pathname === "/resources" ? "text-purple-400 font-semibold" : ""}`}
           >
             Resources
           </Link>
