@@ -1,53 +1,18 @@
 const express = require("express");
 const Quiz = require("../models/Quiz");
+const QuizResult = require("../models/QuizResult");
+const User = require("../models/User");
 
 const router = express.Router();
 
-// ✅ Add a new quiz (Admin/Moderator)
-router.post("/", async (req, res) => {
-  try {
-    const { theme, questions } = req.body;
-    const quizExists = await Quiz.findOne({ theme });
-
-    if (quizExists) {
-      return res.status(400).json({ message: "Quiz with this theme already exists" });
-    }
-
-    const newQuiz = new Quiz({ theme, questions });
-    await newQuiz.save();
-    res.status(201).json({ message: "Quiz added successfully", quiz: newQuiz });
-  } catch (error) {
-    res.status(500).json({ message: "Error adding quiz", error });
-  }
-});
-
-// ✅ Fetch quiz questions by theme
-router.get("/:theme", async (req, res) => {
-  try {
-    const { theme } = req.params;
-    const quiz = await Quiz.findOne({ theme });
-
-    if (!quiz) {
-      return res.status(404).json({ message: "Quiz not found for this theme" });
-    }
-
-    res.status(200).json(quiz.questions);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching quiz", error });
-  }
-});
-
-// ✅ Submit quiz answers and calculate score
+// ✅ Submit Quiz & Calculate Score
 router.post("/:theme/submit", async (req, res) => {
   try {
     const { theme } = req.params;
-    const { answers } = req.body; // Example: { "0": "A", "1": "B", ... }
+    const { userId, answers } = req.body;
 
     const quiz = await Quiz.findOne({ theme });
-
-    if (!quiz) {
-      return res.status(404).json({ message: "Quiz not found for this theme" });
-    }
+    if (!quiz) return res.status(404).json({ message: "Quiz not found" });
 
     let score = 0;
     const results = quiz.questions.map((q, index) => {
@@ -64,25 +29,43 @@ router.post("/:theme/submit", async (req, res) => {
       };
     });
 
-    res.status(200).json({ score, total: quiz.questions.length, results });
+    // ✅ Store Quiz Result
+    const quizResult = new QuizResult({
+      userId,
+      theme,
+      score,
+      totalQuestions: quiz.questions.length,
+      earnedBadges: []
+    });
+
+    // ✅ Fetch User & Update Total Points
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    user.totalPoints += score; // ✅ Add points
+
+    // ✅ Award Badges Based on Points
+    const badgeThresholds = [
+      { points: 10, title: "Ethical Novice" },
+      { points: 20, title: "Moral Explorer" },
+      { points: 30, title: "Conscience Keeper" },
+      { points: 50, title: "Virtue Champion" }
+    ];
+
+    badgeThresholds.forEach((badge) => {
+      if (user.totalPoints >= badge.points && !user.badges.some(b => b.title === badge.title)) {
+        const newBadge = { title: badge.title, image: "/images/badge.png" };
+        user.badges.push(newBadge);
+        quizResult.earnedBadges.push(newBadge);
+      }
+    });
+
+    await user.save();
+    await quizResult.save();
+
+    res.status(200).json({ score, total: quiz.questions.length, results, earnedBadges: quizResult.earnedBadges });
   } catch (error) {
     res.status(500).json({ message: "Error submitting quiz", error });
-  }
-});
-
-// ✅ Delete a quiz by theme (Admin/Moderator)
-router.delete("/:theme", async (req, res) => {
-  try {
-    const { theme } = req.params;
-    const quiz = await Quiz.findOneAndDelete({ theme });
-
-    if (!quiz) {
-      return res.status(404).json({ message: "Quiz not found" });
-    }
-
-    res.status(200).json({ message: "Quiz deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ message: "Error deleting quiz", error });
   }
 });
 
