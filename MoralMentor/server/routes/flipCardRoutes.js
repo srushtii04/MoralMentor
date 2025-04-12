@@ -1,126 +1,58 @@
-const express = require("express");
-const FlipCard = require("../models/FlipCard");
-
+const express = require('express');
 const router = express.Router();
+const FlipCard = require('../models/FlipCard');
 
-// ✅ Get all FlipCards
-router.get("/", async (req, res) => {
+// GET paginated flip cards by theme
+router.get('/flipcards/:theme', async (req, res) => {
   try {
-    const flipCards = await FlipCard.find();
-    res.json(flipCards);
-  } catch (error) {
-    res.status(500).json({ message: "Server Error", error });
-  }
-});
+    const decodedTheme = decodeURIComponent(req.params.theme); // Decode the theme
+    const skip = parseInt(req.query.skip) || 0;
+    const limit = parseInt(req.query.limit) || 8;
 
-// ✅ Add a new FlipCard (Admin only)
-router.post("/", async (req, res) => {
-  const { question, explanationYes, explanationNo } = req.body;
+    const flipCardData = await FlipCard.findOne({ theme: decodedTheme });
 
-  try {
-    const newFlipCard = new FlipCard({
-      question,
-      explanationYes,
-      explanationNo,
-    });
-
-    await newFlipCard.save();
-    res.status(201).json({ message: "FlipCard added successfully", flipCard: newFlipCard });
-  } catch (error) {
-    res.status(500).json({ message: "Error adding flip card", error });
-  }
-});
-
-// ✅ Get a single FlipCard by ID
-router.get("/:id", async (req, res) => {
-  try {
-    const flipCard = await FlipCard.findById(req.params.id);
-    if (!flipCard) {
-      return res.status(404).json({ message: "FlipCard not found" });
-    }
-    res.json(flipCard);
-  } catch (error) {
-    res.status(500).json({ message: "Server Error", error });
-  }
-});
-
-// ✅ Submit an answer and get the explanation
-router.post("/:id/submit", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { answer } = req.body; // Expecting "Yes" or "No"
-
-    const flipCard = await FlipCard.findById(id);
-    if (!flipCard) {
-      return res.status(404).json({ message: "FlipCard not found" });
+    if (!flipCardData) {
+      return res.status(404).json({ error: 'Theme not found' });
     }
 
-    // Determine the explanation based on the user's choice
-    const explanation =
-      answer === "Yes" ? flipCard.explanationYes : flipCard.explanationNo;
+    const paginatedCards = flipCardData.cards.slice(skip, skip + limit).map((card) => ({
+      question: card.question,
+      correctAnswer: card.correctAnswer,
+      explanationCorrect: card.explanationCorrect,
+      explanationIncorrect: card.explanationIncorrect,
+    }));
 
-    res.status(200).json({
-      question: flipCard.question,
-      selectedAnswer: answer,
-      explanation,
-    });
-  } catch (error) {
-    res.status(500).json({ message: "Error processing answer", error });
+    res.json({ [decodedTheme]: paginatedCards });
+  } catch (err) {
+    console.error('Pagination error:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
-// ✅ Delete a FlipCard (Admin only)
-router.delete("/:id", async (req, res) => {
+// GET a random card by theme
+router.get('/flipcards/random/:theme', async (req, res) => {
   try {
-    const flipCard = await FlipCard.findByIdAndDelete(req.params.id);
-    if (!flipCard) {
-      return res.status(404).json({ message: "FlipCard not found" });
-    }
-    res.status(200).json({ message: "FlipCard deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ message: "Error deleting flip card", error });
-  }
-});
+    const decodedTheme = decodeURIComponent(req.params.theme); // Decode the theme
+    const flipCardData = await FlipCard.findOne({ theme: decodedTheme });
 
-// ✅ Get Random Set of 8 FlipCards
-router.get("/random", async (req, res) => {
-  try {
-    const totalCards = await FlipCard.countDocuments();
-    const randomSkip = Math.floor(Math.random() * totalCards);
-    
-    const randomFlipCards = await FlipCard.aggregate([
-      { $skip: randomSkip },
-      { $limit: 8 }, // Fetch 8 cards randomly
-    ]);
-
-    if (randomFlipCards.length === 0) {
-      return res.status(404).json({ message: "No FlipCards found" });
+    if (!flipCardData || !flipCardData.cards.length) {
+      return res.status(404).json({ error: 'Theme not found or no cards available' });
     }
 
-    res.json(randomFlipCards);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching random FlipCards", error });
-  }
-});
+    const randomIndex = Math.floor(Math.random() * flipCardData.cards.length);
+    const card = flipCardData.cards[randomIndex];
 
-// ✅ Reset FlipCards (Get next random set)
-router.get("/reset", async (req, res) => {
-  try {
-    const totalCards = await FlipCard.countDocuments();
-    const randomSkip = Math.floor(Math.random() * totalCards);
+    const formattedCard = {
+      question: card.question,
+      correctAnswer: card.correctAnswer,
+      explanationCorrect: card.explanationCorrect,
+      explanationIncorrect: card.explanationIncorrect,
+    };
 
-    const randomFlipCards = await FlipCard.aggregate([
-      { $skip: randomSkip },
-      { $limit: 8 }, // Fetch next 8 cards randomly
-    ]);
-
-    if (randomFlipCards.length === 0) {
-      return res.status(404).json({ message: "No FlipCards found" });
-    }
-
-    res.json(randomFlipCards);
-  } catch (error) {
-    res.status(500).json({ message: "Error resetting FlipCards", error });
+    res.json(formattedCard);
+  } catch (err) {
+    console.error('Random card error:', err);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
