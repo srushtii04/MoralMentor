@@ -1,71 +1,87 @@
-const express = require("express");
-const Quiz = require("../models/Quiz");
-const QuizResult = require("../models/QuizResult");
-const User = require("../models/User");
-
+const express = require('express');
 const router = express.Router();
+const Quiz = require('../models/Quiz');
+const QuizResult = require('../models/QuizResult');
 
-// ✅ Submit Quiz & Calculate Score
-router.post("/:theme/submit", async (req, res) => {
+// GET /api/quiz?theme=Empathy - Get 10 random scenarios for a theme
+router.get('/quiz', async (req, res) => {
   try {
-    const { theme } = req.params;
-    const { userId, answers } = req.body;
+    const theme = req.query.theme;
+    if (!theme) {
+      return res.status(400).json({ message: 'Theme is required' });
+    }
 
-    const quiz = await Quiz.findOne({ theme });
-    if (!quiz) return res.status(404).json({ message: "Quiz not found" });
+    const result = await Quiz.aggregate([
+      { $match: { theme } },
+      { $unwind: "$questions" },
+      { $sample: { size: 10 } },
+      {
+        $group: {
+          _id: "$theme",
+          questions: { $push: "$questions" }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          theme: "$_id",
+          questions: 1
+        }
+      }
+    ]);
+
+    if (result.length === 0) {
+      return res.status(404).json({ message: 'No quiz found for this theme' });
+    }
+
+    res.json(result[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Error fetching quiz questions' });
+  }
+});
+
+// POST /api/quiz-result - Submit quiz answers
+router.post('/quiz-result', async (req, res) => {
+  try {
+    const { answers, theme } = req.body;
+
+    if (!theme || !Array.isArray(answers)) {
+      return res.status(400).json({ message: 'Theme and answers are required' });
+    }
+
+    const result = await Quiz.aggregate([
+      { $match: { theme } },
+      { $unwind: "$questions" },
+      { $sample: { size: 10 } },
+      {
+        $group: {
+          _id: "$theme",
+          questions: { $push: "$questions" }
+        }
+      }
+    ]);
+
+    if (result.length === 0) {
+      return res.status(404).json({ message: 'Quiz not found' });
+    }
+
+    const selectedQuestions = result[0].questions;
 
     let score = 0;
-    const results = quiz.questions.map((q, index) => {
-      const userChoice = answers[index];
-      const isCorrect = userChoice === q.correctDecision;
-      if (isCorrect) score += 1;
-
-      return {
-        scenario: q.scenario,
-        userResponse: userChoice,
-        correctDecision: q.correctDecision,
-        consequence: userChoice === "A" ? q.consequenceA : q.consequenceB,
-        isCorrect,
-      };
-    });
-
-    // ✅ Store Quiz Result
-    const quizResult = new QuizResult({
-      userId,
-      theme,
-      score,
-      totalQuestions: quiz.questions.length,
-      earnedBadges: []
-    });
-
-    // ✅ Fetch User & Update Total Points
-    const user = await User.findById(userId);
-    if (!user) return res.status(404).json({ message: "User not found" });
-
-    user.totalPoints += score; // ✅ Add points
-
-    // ✅ Award Badges Based on Points
-    const badgeThresholds = [
-      { points: 10, title: "Ethical Novice" },
-      { points: 20, title: "Moral Explorer" },
-      { points: 30, title: "Conscience Keeper" },
-      { points: 50, title: "Virtue Champion" }
-    ];
-
-    badgeThresholds.forEach((badge) => {
-      if (user.totalPoints >= badge.points && !user.badges.some(b => b.title === badge.title)) {
-        const newBadge = { title: badge.title, image: "/images/badge.png" };
-        user.badges.push(newBadge);
-        quizResult.earnedBadges.push(newBadge);
+    selectedQuestions.forEach((q, i) => {
+      if (answers[i] === q.correctDecision) {
+        score += q.points;
       }
     });
 
-    await user.save();
+    const quizResult = new QuizResult({ answers, score });
     await quizResult.save();
 
-    res.status(200).json({ score, total: quiz.questions.length, results, earnedBadges: quizResult.earnedBadges });
-  } catch (error) {
-    res.status(500).json({ message: "Error submitting quiz", error });
+    res.status(200).json({ score });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error while saving result' });
   }
 });
 

@@ -82,4 +82,46 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// ✅ Get Random Set of 8 FlipCards
+router.get("/random", async (req, res) => {
+  try {
+    const totalCards = await FlipCard.countDocuments();
+    const randomSkip = Math.floor(Math.random() * totalCards);
+    
+    const randomFlipCards = await FlipCard.aggregate([
+      { $skip: randomSkip },
+      { $limit: 8 }, // Fetch 8 cards randomly
+    ]);
+
+    if (randomFlipCards.length === 0) {
+      return res.status(404).json({ message: "No FlipCards found" });
+    }
+
+    res.json(randomFlipCards);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching random FlipCards", error });
+  }
+});
+
+// ✅ Reset FlipCards (Get next random set)
+router.get("/reset", async (req, res) => {
+  try {
+    const totalCards = await FlipCard.countDocuments();
+    const randomSkip = Math.floor(Math.random() * totalCards);
+
+    const randomFlipCards = await FlipCard.aggregate([
+      { $skip: randomSkip },
+      { $limit: 8 }, // Fetch next 8 cards randomly
+    ]);
+
+    if (randomFlipCards.length === 0) {
+      return res.status(404).json({ message: "No FlipCards found" });
+    }
+
+    res.json(randomFlipCards);
+  } catch (error) {
+    res.status(500).json({ message: "Error resetting FlipCards", error });
+  }
+});
+
 module.exports = router;

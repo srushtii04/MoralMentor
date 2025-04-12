@@ -1,17 +1,20 @@
-const mongoose = require("mongoose");
-
-const questionSchema = new mongoose.Schema({
-    scenario: { type: String, required: true },
-    optionA: { type: String, required: true },
-    optionB: { type: String, required: true },
-    correctDecision: { type: String, enum: ["A", "B"], required: true },
-    consequenceA: { type: String, required: true },
-    consequenceB: { type: String, required: true }
-});
+const mongoose = require('mongoose');
 
 const quizSchema = new mongoose.Schema({
-    theme: { type: String, required: true, unique: true },
-    questions: [questionSchema]
+  theme: String,
+  questions: [
+    {
+      scenario: String,
+      options: {
+        A: String,
+        B: String
+      },
+      correctDecision: String,
+      consequenceA: String,
+      consequenceB: String,
+      points: Number
+    }
+  ]
 });
 
-module.exports = mongoose.model("Quiz", quizSchema);
+module.exports = mongoose.model('Quiz', quizSchema); // Binds to 'quizzes' collection

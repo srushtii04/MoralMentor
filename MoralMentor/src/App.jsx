@@ -3,7 +3,8 @@ import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignUpPage";
 import QuizPage from "./components/QuizPage";
-import DebatePage from "./components/DebatePage"; // Import DebatePage
+import QuizResult from "./components/QuizResult"; // ✅ Add this line
+import DebatePage from "./components/DebatePage";
 import Navbar from "./components/Navbar";
 import ResourcesPage from "./components/ResourcesPage";
 import Dashboard from "./components/Dashboard";
@@ -20,12 +21,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/result" element={<QuizResult />} /> {/* ✅ Add this line */}
         <Route path="/resources" element={<ResourcesPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/flipcards" element={<FlipCards/>}/>
-        <Route path="/hub" element={<LearningHub/>}/>
-        <Route path="/debates" element={<DebatePage />} /> 
+        <Route path="/about" element={<About />} />
+        <Route path="/flipcards" element={<FlipCards />} />
+        <Route path="/hub" element={<LearningHub />} />
+        <Route path="/debates" element={<DebatePage />} />
       </Routes>
     </Router>
   );
