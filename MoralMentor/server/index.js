@@ -6,20 +6,22 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const socketIo = require('socket.io');
 
-const quizRoutes = require('./routes/quizRoutes');
-const flipCardRoutes = require('./routes/flipCardRoutes'); // ✅ Added
-
 const app = express();
 const server = require('http').createServer(app);
 const io = socketIo(server);
-
-const PORT = 5000;
 
 // Middleware
 app.use(cors({
   origin: ['http://localhost:5173', 'http://localhost:5174'],
 }));
 app.use(bodyParser.json());
+
+const User = require('./models/User');
+const quizRoutes = require('./routes/quizRoutes');
+const flipCardRoutes = require('./routes/flipCardRoutes');
+const debateRoutes = require('./routes/debateRoutes'); // ✅ Added
+
+const PORT = 5000;
 
 // MongoDB Connection
 mongoose.connect('mongodb://127.0.0.1:27017/moralmentor', {
@@ -31,17 +33,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/moralmentor', {
   console.error('MongoDB connection error:', err);
 });
 
-// User Schema
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, unique: true },
-  password: String,
-});
-const User = mongoose.model('User', userSchema);
-
 // Signup Route
 app.post('/api/signup', async (req, res) => {
-  const { name, email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     const existingUser = await User.findOne({ email });
@@ -50,9 +44,9 @@ app.post('/api/signup', async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ name, email, password: hashedPassword });
-    await newUser.save();
+    const newUser = new User({ username, email, password: hashedPassword });
 
+    await newUser.save();
     res.status(201).json({ message: 'Account created successfully' });
   } catch (err) {
     console.error('Signup error:', err);
@@ -77,7 +71,7 @@ app.post('/api/login', async (req, res) => {
 
     const token = jwt.sign(
       { userId: user._id, email: user.email },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'secret',
       { expiresIn: '1h' }
     );
 
@@ -90,37 +84,8 @@ app.post('/api/login', async (req, res) => {
 
 // Existing Routes
 app.use('/api', quizRoutes);
-
-// FlipCard Routes (Updated to handle /api/flipcards/:theme, /api/flipcards/random/:theme)
 app.use('/api', flipCardRoutes);
-
-// Optional: Direct theme route for initial data if needed
-const FlipCard = require('./models/FlipCard');
-app.get('/api/questions/:theme', async (req, res) => {
-  try {
-    const decodedTheme = decodeURIComponent(req.params.theme);
-    console.log("Decoded theme:", decodedTheme);
-
-    const flipCardData = await FlipCard.findOne({ theme: decodedTheme });
-
-    if (!flipCardData) {
-      return res.status(404).json({ error: 'Theme not found' });
-    }
-
-    const cards = flipCardData.cards.map((card) => ({
-      question: card.question,
-      optionYes: "Yes",
-      optionNo: "No",
-      explanationYes: card.correctAnswer === "Yes" ? card.explanationCorrect : card.explanationIncorrect,
-      explanationNo: card.correctAnswer === "No" ? card.explanationCorrect : card.explanationIncorrect,
-    }));
-
-    res.json({ [decodedTheme]: cards });
-  } catch (err) {
-    console.error('Error fetching questions for theme:', req.params.theme, err);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+app.use('/api/debate', debateRoutes); // ✅ Mount the debate routes under /api
 
 // Default route
 app.get('/', (req, res) => {
@@ -131,23 +96,20 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
 
-  // Join debate room
   socket.on('joinDebate', (debateRoomId, userId, side) => {
     socket.join(debateRoomId);
     console.log(`${userId} joined debate room ${debateRoomId} as ${side}`);
-    io.to(debateRoomId).emit('userJoined', userId, side); // Notify other users
+    io.to(debateRoomId).emit('userJoined', userId, side);
   });
 
-  // Voting event
   socket.on('vote', (debateRoomId, side) => {
     console.log(`User voted for ${side} in room ${debateRoomId}`);
-    io.to(debateRoomId).emit('newVote', side); // Update the votes in the room
+    io.to(debateRoomId).emit('newVote', side);
   });
 
-  // Round end event
   socket.on('endRound', (debateRoomId, winner) => {
     console.log(`Round ended in room ${debateRoomId}, winner: ${winner}`);
-    io.to(debateRoomId).emit('roundEnded', winner); // Announce winner of the round
+    io.to(debateRoomId).emit('roundEnded', winner);
   });
 
   socket.on('disconnect', () => {

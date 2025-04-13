@@ -12,13 +12,14 @@ const debateSchema = new mongoose.Schema({
   }],
   rounds: [{
     roundNumber: { type: Number, required: true },
-    proArgument: String,
-    conArgument: String,
+    proArgument: { type: String, default: '' },
+    conArgument: { type: String, default: '' },
     proVotes: { type: Number, default: 0 },
     conVotes: { type: Number, default: 0 },
-    winner: { type: String, enum: ['pro', 'con', 'none'] },
+    winner: { type: String, enum: ['pro', 'con', 'none'], default: 'none' },
   }],
   status: { type: String, enum: ['pending', 'active', 'completed'], default: 'pending' },
+  createdAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Debate', debateSchema);
