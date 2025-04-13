@@ -5,16 +5,25 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const socketIo = require('socket.io');
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 const server = require('http').createServer(app);
 const io = socketIo(server);
 
+app.use("/api", authRoutes);
+const cookieParser = require("cookie-parser");
+
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'],
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'],  // Added 3000 in case you're using React's default port
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Added methods to make sure all requests are allowed
+  credentials: true,  // Allow credentials (cookies, sessions)
 }));
-app.use(bodyParser.json());
+
+app.use(cookieParser());
+
+app.use(express.json());
 
 const User = require('./models/User');
 const quizRoutes = require('./routes/quizRoutes');
@@ -29,6 +38,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/moralmentor', {
   useUnifiedTopology: true,
 }).then(() => {
   console.log('Connected to MongoDB');
+  app.listen(5000, () => {
+    console.log("Server running on http://localhost:5000");
+  });
 }).catch((err) => {
   console.error('MongoDB connection error:', err);
 });
@@ -36,6 +48,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/moralmentor', {
 // Signup Route
 app.post('/api/signup', async (req, res) => {
   const { username, email, password } = req.body;
+
+  console.log("Received signup data:", { username, email, password });
 
   try {
     const existingUser = await User.findOne({ email });
