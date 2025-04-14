@@ -1,3 +1,4 @@
+//MoralMentor\server\index.js
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -6,12 +7,11 @@ const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/authRoutes");
 const quizRoutes = require('./routes/quizRoutes');
 const flipCardRoutes = require('./routes/flipCardRoutes');
-const debateRoutes = require('./routes/debateRoutes');
 const userStatsRoutes = require('./routes/userStatsRoutes'); // ✅ Added userStatsRoutes
 
 const app = express();
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+
 
 // Middleware
 app.use(cors({
@@ -41,37 +41,11 @@ mongoose
 app.use("/api", authRoutes); // Auth routes (login, signup, logout)
 app.use('/api', quizRoutes); // Quiz-related routes
 app.use('/api', flipCardRoutes); // Flip card-related routes
-app.use('/api/debate', debateRoutes); // Debate-related routes
 app.use('/api', userStatsRoutes); // User stats-related routes
 
 // Default Route
 app.get('/', (req, res) => {
   res.send('Moral Mentor Backend Running');
-});
-
-// Real-time Socket.IO Handling
-io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
-
-  socket.on('joinDebate', (debateRoomId, userId, side) => {
-    socket.join(debateRoomId);
-    console.log(`${userId} joined debate room ${debateRoomId} as ${side}`);
-    io.to(debateRoomId).emit('userJoined', userId, side);
-  });
-
-  socket.on('vote', (debateRoomId, side) => {
-    console.log(`User voted for ${side} in room ${debateRoomId}`);
-    io.to(debateRoomId).emit('newVote', side);
-  });
-
-  socket.on('endRound', (debateRoomId, winner) => {
-    console.log(`Round ended in room ${debateRoomId}, winner: ${winner}`);
-    io.to(debateRoomId).emit('roundEnded', winner);
-  });
-
-  socket.on('disconnect', () => {
-    console.log('A user disconnected');
-  });
 });
 
 // Error handling middleware

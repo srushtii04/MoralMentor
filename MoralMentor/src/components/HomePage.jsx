@@ -15,8 +15,7 @@ const HomePage = () => {
             </h1>
             
             <p className="text-xl mb-6">
-              Explore real-world ethical dilemmas, engage in interactive quizzes, join live
-              debates, and track your progress—all in one place.
+            Explore real-world ethical dilemmas, engage in interactive quizzes, discover timeless wisdom through our curated readings, and track your progress—all in one place.
             </p>
             
             <p className="text-xl mb-8">

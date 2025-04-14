@@ -11,7 +11,6 @@ const Leaderboard = () => {
 
   return (
     <div className="bg-purple-200 p-4 sm:p-6 rounded-lg shadow-md w-full max-w-3xl">
-      <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Debate Leaderboard</h2>
       <ul className="mt-4">
         {leaders.map((leader, index) => (
           <li

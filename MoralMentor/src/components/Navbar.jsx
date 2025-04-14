@@ -71,16 +71,6 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/debates"
-            className={`hover:text-purple-300 px-2 py-1 rounded-md transition-colors ${
-              location.pathname === "/debate-home" ? "text-purple-400 font-semibold" : ""
-            }`}
-          >
-            Debates
-          </Link>
-        </li>
-        <li>
-          <Link
             to="/resources"
             className={`hover:text-purple-300 px-2 py-1 rounded-md transition-colors ${
               location.pathname === "/resources" ? "text-purple-400 font-semibold" : ""

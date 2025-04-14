@@ -1,3 +1,4 @@
+//MoralMentor\server\routes\quizRoutes.js
 const express = require('express');
 const router = express.Router();
 const Quiz = require('../models/Quiz');
@@ -86,3 +87,4 @@ router.post('/quiz-result', async (req, res) => {
 });
 
 module.exports = router;
+

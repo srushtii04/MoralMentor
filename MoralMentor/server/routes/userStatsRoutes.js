@@ -1,9 +1,10 @@
+//MoralMentor\server\routes\userStatsRoutes.js
 const express = require("express");
 const UserStats = require("../models/UserStats"); // Import user stats model
 
 const router = express.Router();
 
-// ✅ Update Quiz Score & Earn Badges
+// Update Quiz Score & Earn Badges
 router.post("/update-score", async (req, res) => {
   try {
     const { userId, score } = req.body;
@@ -18,7 +19,7 @@ router.post("/update-score", async (req, res) => {
     userStats.totalScore += score;
     userStats.quizzesCompleted += 1;
 
-    // Badge system (Example: Earn badge at 100, 150, 200 points)
+    // Badge system (Earn badge at 100, 150, 200 points)
     const badgeMilestones = [100, 150, 200, 300, 500];
     if (badgeMilestones.includes(userStats.totalScore)) {
       userStats.badges.push({
