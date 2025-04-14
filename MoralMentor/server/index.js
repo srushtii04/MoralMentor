@@ -1,112 +1,55 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const socketIo = require('socket.io');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/authRoutes");
+const quizRoutes = require('./routes/quizRoutes');
+const flipCardRoutes = require('./routes/flipCardRoutes');
+const debateRoutes = require('./routes/debateRoutes');
+const userStatsRoutes = require('./routes/userStatsRoutes'); // ✅ Added userStatsRoutes
 
 const app = express();
 const server = require('http').createServer(app);
-const io = socketIo(server);
-
-app.use("/api", authRoutes);
-const cookieParser = require("cookie-parser");
+const io = require('socket.io')(server);
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'],  // Added 3000 in case you're using React's default port
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Added methods to make sure all requests are allowed
-  credentials: true,  // Allow credentials (cookies, sessions)
+  origin: ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 
-app.use(cookieParser());
-
-app.use(express.json());
-
-const User = require('./models/User');
-const quizRoutes = require('./routes/quizRoutes');
-const flipCardRoutes = require('./routes/flipCardRoutes');
-const debateRoutes = require('./routes/debateRoutes'); // ✅ Added
-
-const PORT = 5000;
+app.use(cookieParser()); // Parse cookies, including JWT token
+app.use(express.json()); // Parse incoming JSON requests
+app.use(express.urlencoded({ extended: true })); // Parse incoming URL-encoded requests
 
 // MongoDB Connection
-mongoose.connect('mongodb://127.0.0.1:27017/moralmentor', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB');
-  app.listen(5000, () => {
-    console.log("Server running on http://localhost:5000");
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
   });
-}).catch((err) => {
-  console.error('MongoDB connection error:', err);
-});
 
-// Signup Route
-app.post('/api/signup', async (req, res) => {
-  const { username, email, password } = req.body;
+// API Routes
+app.use("/api", authRoutes); // Auth routes
+app.use('/api', quizRoutes); // Quiz-related routes
+app.use('/api', flipCardRoutes); // Flip card-related routes
+app.use('/api/debate', debateRoutes); // Debate-related routes
+app.use('/api', userStatsRoutes); // User stats-related routes
 
-  console.log("Received signup data:", { username, email, password });
-
-  try {
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ username, email, password: hashedPassword });
-
-    await newUser.save();
-    res.status(201).json({ message: 'Account created successfully' });
-  } catch (err) {
-    console.error('Signup error:', err);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
-
-// Login Route
-app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(400).json({ message: 'Invalid credentials' });
-    }
-
-    const token = jwt.sign(
-      { userId: user._id, email: user.email },
-      process.env.JWT_SECRET || 'secret',
-      { expiresIn: '1h' }
-    );
-
-    res.status(200).json({ message: 'Login successful', token });
-  } catch (err) {
-    console.error('Login error:', err);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
-
-// Existing Routes
-app.use('/api', quizRoutes);
-app.use('/api', flipCardRoutes);
-app.use('/api/debate', debateRoutes); // ✅ Mount the debate routes under /api
-
-// Default route
+// Default Route
 app.get('/', (req, res) => {
   res.send('Moral Mentor Backend Running');
 });
 
-// Real-time socket handling
+// Real-time Socket.IO Handling
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
 
@@ -131,7 +74,23 @@ io.on('connection', (socket) => {
   });
 });
 
-// Start server
+// Error handling middleware
+app.use((req, res, next) => {
+  const error = new Error("Route not found");
+  error.status = 404;
+  next(error);
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json({
+    message: err.message || "Internal Server Error",
+    error: err.stack,
+  });
+});
+
+// Start Server
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

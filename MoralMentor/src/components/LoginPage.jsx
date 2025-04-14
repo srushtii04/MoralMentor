@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import loginImage from "../assets/login.png";
-import googleLogo from "../assets/google.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [loginError, setLoginError] = useState(""); // for incorrect password
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const validate = () => {
     const newErrors = {};
@@ -20,8 +23,17 @@ const LoginPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleLogin = async () => {
-    if (!validate()) return;
+  const handleLogin = async (e) => {
+    // Prevent default form submission
+    e.preventDefault();
+    
+    setLoginError(""); // reset previous login errors
+    setLoading(true);
+
+    if (!validate()) {
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await axios.post("http://localhost:5000/api/login", {
@@ -30,80 +42,91 @@ const LoginPage = () => {
       });
 
       if (response.status === 200) {
-        alert("Login successful!");
         localStorage.setItem("token", response.data.token);
-        // Redirect or state update
+        navigate("/dashboard");
       }
     } catch (error) {
-      alert("Login failed. Check credentials.");
+      console.error("Login error:", error);
+      if (
+        error.response &&
+        error.response.status === 401 &&
+        error.response.data.message === "Invalid password"
+      ) {
+        setLoginError("Incorrect password. Please try again.");
+      } else {
+        setLoginError("Login failed. Check your credentials.");
+      }
+    } finally {
+      setLoading(false);
     }
-  };
-
-  const handleGoogleLogin = () => {
-    alert("Google login not implemented yet.");
   };
 
   return (
     <div className="flex flex-col lg:flex-row-reverse items-center justify-center min-h-screen bg-[#F3E8FF] p-6">
-      <div className="w-full max-w-4xl flex flex-col lg:flex-row-reverse items-center lg:items-stretch bg-transparent rounded-lg overflow-hidden">
-        <div className="w-full lg:w-1/2 px-4">
+      <div className="w-full max-w-4xl h-[85vh] flex flex-col lg:flex-row-reverse items-stretch bg-white shadow-lg rounded-lg overflow-hidden">
+        
+        {/* Image Section */}
+        <div className="w-full lg:w-1/2">
           <img
             src={loginImage}
             alt="Illustration"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-full lg:w-1/2 p-8 lg:pr-12 bg-white shadow-lg">
-          <h2 className="text-3xl font-bold mb-6 text-center">Login</h2>
 
-          <input
-            type="email"
-            placeholder="Email"
-            className={`w-full border ${
-              errors.email ? "border-red-500" : "border-gray-300"
-            } rounded-md p-3 mb-2 outline-none focus:ring-2 focus:ring-purple-500`}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mb-2">{errors.email}</p>
-          )}
+        {/* Form Section */}
+        <div className="w-full lg:w-1/2 px-8 py-12 flex flex-col justify-center h-full">
+          <h2 className="text-3xl font-bold mb-8 text-center text-black">Login</h2>
 
-          <input
-            type="password"
-            placeholder="Password"
-            className={`w-full border ${
-              errors.password ? "border-red-500" : "border-gray-300"
-            } rounded-md p-3 mb-2 outline-none focus:ring-2 focus:ring-purple-500`}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {errors.password && (
-            <p className="text-red-500 text-sm mb-2">{errors.password}</p>
-          )}
+          {/* Changed to proper form element */}
+          <form onSubmit={handleLogin} className="flex flex-col gap-5">
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className={`w-full border ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                } rounded-md p-3 outline-none focus:ring-2 focus:ring-purple-500`}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
+            </div>
 
-          <button
-            className="w-full bg-black text-white py-3 rounded-md mb-4 text-lg font-semibold hover:bg-gray-800 transition"
-            onClick={handleLogin}
-          >
-            Login
-          </button>
+            <div>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className={`w-full border ${
+                  errors.password || loginError ? "border-red-500" : "border-gray-300"
+                } rounded-md p-3 outline-none focus:ring-2 focus:ring-purple-500`}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+              />
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+              )}
+              {loginError && (
+                <p className="text-red-500 text-sm mt-1">{loginError}</p>
+              )}
+            </div>
 
-          <div className="flex items-center mb-4">
-            <hr className="w-full border-gray-300" />
-            <span className="mx-3 text-gray-500 text-sm">OR</span>
-            <hr className="w-full border-gray-300" />
-          </div>
+            <button
+              type="submit"
+              className="w-full bg-black text-white py-3 rounded-md text-lg font-semibold hover:bg-gray-800 transition"
+              disabled={loading}
+            >
+              {loading ? "Logging in..." : "Login"}
+            </button>
+          </form>
 
-          <button
-            className="w-full flex items-center justify-center border border-gray-300 py-3 rounded-md hover:bg-gray-100 transition"
-            onClick={handleGoogleLogin}
-          >
-            <img src={googleLogo} alt="Google Logo" className="w-5 h-5 mr-3" />
-            Continue with Google
-          </button>
-
-          <p className="text-center text-gray-600 mt-4">
+          <p className="text-center text-gray-600 mt-8">
             New to Us?{" "}
             <a href="/signup" className="text-black font-bold hover:underline">
               Create account

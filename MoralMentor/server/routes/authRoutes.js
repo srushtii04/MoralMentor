@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -22,7 +24,7 @@ router.post("/signup", async (req, res) => {
     await newUser.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Error creating user", error });
+    res.status(500).json({ message: "Error creating user", error: error.message, stack: error.stack });
   }
 });
 
@@ -46,7 +48,7 @@ router.post("/login", async (req, res) => {
     res.cookie("token", token, { httpOnly: true, secure: false }); // Change secure to true in production
     res.status(200).json({ message: "Login successful", token });
   } catch (error) {
-    res.status(500).json({ message: "Error logging in", error });
+    res.status(500).json({ message: "Error logging in", error: error.message, stack: error.stack });
   }
 });
 
@@ -57,7 +59,7 @@ router.post("/logout", (req, res) => {
 });
 
 // ✅ Example of a Protected Route
-router.get("/profile", authMiddleware, async (req, res) => {
+router.get("/api/profile", authMiddleware, async (req, res) => {
   const user = await User.findById(req.user.id).select("-password");
   res.status(200).json({ user });
 });
