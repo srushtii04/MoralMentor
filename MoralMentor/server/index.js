@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/authRoutes");
 const quizRoutes = require('./routes/quizRoutes');
 const flipCardRoutes = require('./routes/flipCardRoutes');
-const userStatsRoutes = require('./routes/userStatsRoutes'); // ✅ Added userStatsRoutes
+const userStatsRoutes = require('./routes/userStatsRoutes'); // Added userStatsRoutes
 
 const app = express();
 const server = require('http').createServer(app);
