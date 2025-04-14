@@ -1,0 +1,924 @@
+[{
+  "_id": {
+    "$oid": "67f9f68a7055b3f24d546801"
+  },
+  "theme": "Campus & Academic Ethics",
+  "cards": [
+    {
+      "question": "Is plagiarism considered unethical in academic settings?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Plagiarism is a violation of academic integrity.",
+      "explanationIncorrect": "Incorrect! Plagiarism is a serious ethical violation in academics."
+    },
+    {
+      "question": "Is it ethical to collaborate with a classmate during an open-book exam?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Collaboration during an open-book exam is considered cheating.",
+      "explanationIncorrect": "Incorrect! Collaboration in an exam without permission is unethical."
+    },
+    {
+      "question": "Should you report a peer who is cheating in an exam?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Reporting cheating helps maintain academic integrity.",
+      "explanationIncorrect": "Incorrect! Ignoring cheating undermines academic fairness."
+    },
+    {
+      "question": "Is it okay to use unauthorized resources during a take-home assignment?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using unauthorized resources is a violation of academic rules.",
+      "explanationIncorrect": "Incorrect! It's essential to follow the academic guidelines."
+    },
+    {
+      "question": "Is it ethical to exaggerate your achievements on your resume?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Misrepresenting your achievements is dishonest and unethical.",
+      "explanationIncorrect": "Incorrect! Exaggerating achievements is a form of deception."
+    },
+    {
+      "question": "Is it acceptable to use a classmate’s assignment as a reference to complete your own?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using another student's work is plagiarism and unethical.",
+      "explanationIncorrect": "Incorrect! This is a form of academic dishonesty."
+    },
+    {
+      "question": "Is it ethical to accept a gift from a company seeking a job recommendation?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Accepting gifts in exchange for recommendations is considered unethical.",
+      "explanationIncorrect": "Incorrect! Accepting gifts can create a conflict of interest."
+    },
+    {
+      "question": "Should you prioritize your own academic success over helping others in your class?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Collaboration and helping others fosters a positive learning environment.",
+      "explanationIncorrect": "Incorrect! Helping classmates can enhance learning for everyone."
+    },
+    {
+      "question": "Is it ethical to work on assignments or projects while under the influence of drugs or alcohol?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Academic work should be done while being focused and sober.",
+      "explanationIncorrect": "Incorrect! It is unsafe and unethical to work under the influence."
+    },
+    {
+      "question": "Should you be honest about your academic capabilities during job interviews?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Honesty is crucial in building trust and credibility in professional settings.",
+      "explanationIncorrect": "Incorrect! Being dishonest about your abilities can damage your reputation."
+    },
+    {
+      "question": "Is it acceptable to copy a few lines of code from a peer's assignment if you're stuck?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Copying code is a form of plagiarism and should be avoided.",
+      "explanationIncorrect": "Incorrect! Even a small portion of copied code is considered unethical."
+    },
+    {
+      "question": "Is it ethical to review a classmate's exam answers before your exam?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Reviewing another student's exam answers is considered cheating.",
+      "explanationIncorrect": "Incorrect! This is a violation of academic integrity."
+    },
+    {
+      "question": "Should you ever allow someone to take credit for your work in a group project?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Allowing someone to take credit for your work is dishonest and unfair.",
+      "explanationIncorrect": "Incorrect! Everyone should contribute and receive proper credit for their work."
+    },
+    {
+      "question": "Is it ethical to accept a grade change if the professor made a mistake in grading?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! It is ethical to accept a correction if a grading mistake is made.",
+      "explanationIncorrect": "Incorrect! It's your responsibility to report any grading mistakes for fairness."
+    },
+    {
+      "question": "Is it okay to submit the same assignment for two different courses without permission?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Submitting the same work for multiple courses is a form of academic dishonesty.",
+      "explanationIncorrect": "Incorrect! You should create unique work for each course unless stated otherwise."
+    },
+    {
+      "question": "Should you disclose any conflicts of interest when working on a research project?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Disclosing conflicts ensures transparency and integrity in research.",
+      "explanationIncorrect": "Incorrect! Failing to disclose conflicts undermines the credibility of the research."
+    },
+    {
+      "question": "Is it ethical to use someone else's research and claim it as your own in a paper?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! This is plagiarism, a severe violation of academic ethics.",
+      "explanationIncorrect": "Incorrect! Using another's work without citation is academic misconduct."
+    },
+    {
+      "question": "Should you always follow the academic integrity policies of your institution?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Upholding academic integrity policies is vital for a fair academic environment.",
+      "explanationIncorrect": "Incorrect! Ignoring policies harms the academic community."
+    },
+    {
+      "question": "Is it acceptable to use unauthorized software during exams or assignments?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using unauthorized tools or software is against academic rules.",
+      "explanationIncorrect": "Incorrect! Using unauthorized software compromises fairness and integrity."
+    },
+    {
+      "question": "Is it ethical to falsify data for a research project to make results look better?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Falsifying data undermines research integrity and damages credibility.",
+      "explanationIncorrect": "Incorrect! Altering data is a severe ethical violation in research."
+    },
+    {
+      "question": "Is it acceptable to use notes during an open-book exam if the instructions say it's not allowed?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using notes when it's prohibited is considered cheating.",
+      "explanationIncorrect": "Incorrect! Even in open-book exams, following the rules is essential."
+    },
+    {
+      "question": "Is it ethical to share exam answers with a friend during the exam if they ask for help?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sharing exam answers is a violation of academic integrity.",
+      "explanationIncorrect": "Incorrect! You should never provide exam answers to others during the exam."
+    },
+    {
+      "question": "Should you report if you notice someone else cheating in an exam or assignment?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Reporting unethical behavior ensures fairness for everyone.",
+      "explanationIncorrect": "Incorrect! Failing to report academic dishonesty is equally unethical."
+    },
+    {
+      "question": "Is it acceptable to submit a paper that was previously submitted for another course without modifying it?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! This is considered self-plagiarism and violates academic ethics.",
+      "explanationIncorrect": "Incorrect! You must submit original work for each course."
+    },
+    {
+      "question": "Is it ethical to claim the work of others as your own if you believe no one will find out?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! It is still unethical, regardless of whether anyone finds out.",
+      "explanationIncorrect": "Incorrect! Integrity is about doing the right thing, even when no one is watching."
+    },
+    {
+      "question": "Is it acceptable to collaborate on a group assignment when the instructions say it must be done individually?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Collaborating when prohibited is a breach of academic guidelines.",
+      "explanationIncorrect": "Incorrect! Individual assignments should be completed without outside assistance."
+    },
+    {
+      "question": "Should you always cite the sources you reference in your academic work?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Citing sources properly is essential to avoid plagiarism and give credit to original authors.",
+      "explanationIncorrect": "Incorrect! Failing to cite sources is considered plagiarism."
+    },
+    {
+      "question": "Is it ethical to falsify your attendance in a class to make up for missed sessions?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Falsifying attendance is dishonest and unethical.",
+      "explanationIncorrect": "Incorrect! Attending classes and being honest about your participation is important."
+    },
+    {
+      "question": "Is it acceptable to accept an offer to change your grade from a professor in exchange for a favor?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! This is bribery and a severe violation of academic integrity.",
+      "explanationIncorrect": "Incorrect! Accepting such offers undermines fairness and ethics."
+    },
+    {
+      "question": "Is it ethical to use unauthorized online resources to complete an assignment?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using unauthorized resources is considered cheating and dishonest.",
+      "explanationIncorrect": "Incorrect! You must complete assignments based on the allowed resources and instructions."
+    },
+    {
+      "question": "Is it ethical to share a graded paper with other students to help them prepare for exams?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Sharing your graded paper helps others understand expectations and improve.",
+      "explanationIncorrect": "Incorrect! It is ethical to share graded work as a study tool, but it should not be used for cheating."
+    },
+    {
+      "question": "Is it acceptable to copy answers from a classmate if you both agree to do it?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Collaborating in cheating is a violation of academic integrity, even with consent.",
+      "explanationIncorrect": "Incorrect! Agreeing to cheat with someone else does not make it acceptable."
+    },
+    {
+      "question": "Is it unethical to use a homework solution from the internet if it is not directly prohibited by the course guidelines?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Using internet solutions without attribution is considered plagiarism, regardless of the course guidelines.",
+      "explanationIncorrect": "Incorrect! Even if not explicitly prohibited, using uncredited work is unethical."
+    },
+    {
+      "question": "Is it acceptable to adjust your work after receiving feedback from a peer tutor to make it better, but without plagiarizing?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Using feedback to improve your work while maintaining originality is ethical.",
+      "explanationIncorrect": "Incorrect! Peer feedback is a great way to improve, as long as the work remains your own."
+    },
+    {
+      "question": "Is it ethical to submit an assignment that you paid someone else to write for you?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Paying someone else to complete your work is a violation of academic integrity.",
+      "explanationIncorrect": "Incorrect! You are responsible for your own academic work, and paying someone to do it is unethical."
+    },
+    {
+      "question": "Should you always report any suspected academic dishonesty in your class?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Reporting suspicious activity helps maintain fairness and integrity in academic environments.",
+      "explanationIncorrect": "Incorrect! Failing to report suspected dishonesty allows unfair practices to continue."
+    },
+    {
+      "question": "Is it acceptable to paraphrase another person's work without citation?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Paraphrasing without citation is considered plagiarism.",
+      "explanationIncorrect": "Incorrect! Paraphrasing without citing the source still violates academic integrity."
+    },
+    {
+      "question": "Is it ethical to reuse a portion of a previously submitted assignment in a new course without permission?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! This is self-plagiarism, and it’s unethical to reuse work without proper authorization.",
+      "explanationIncorrect": "Incorrect! Each assignment should be original unless explicitly allowed by the instructor."
+    },
+    {
+      "question": "If your professor gives you an extension on an assignment, is it ethical to ask for an extension just to have more time to work on it?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Extensions should be granted for valid reasons, not just for personal convenience.",
+      "explanationIncorrect": "Incorrect! You must follow the professor's guidelines for extensions and not misuse them."
+    },
+    {
+      "question": "Is it acceptable to bribe a professor to change your grade after a test?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Bribery is unethical and a criminal offense, and it violates academic integrity.",
+      "explanationIncorrect": "Incorrect! Offering or accepting bribes to alter grades is illegal and unethical."
+    },
+    {
+      "question": "Is it ethical to provide your exam answers to a classmate during the exam if they ask for help?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sharing answers during an exam is cheating and violates academic integrity.",
+      "explanationIncorrect": "Incorrect! Helping someone with exam answers during the test is unethical and considered cheating."
+    },
+    {
+      "question": "Is it okay to use notes written during a lecture for personal reference during exams?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Notes taken during class for studying are allowed, as long as they comply with exam rules.",
+      "explanationIncorrect": "Incorrect! Notes from class can be useful for studying, but it’s important to follow exam guidelines."
+    },
+    {
+      "question": "Is it acceptable to alter the results of your lab report to make them appear more accurate?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Falsifying data is considered academic dishonesty and violates ethical standards.",
+      "explanationIncorrect": "Incorrect! Fabricating or altering results in reports is unethical and dishonest."
+    },
+    {
+      "question": "Is it ethical to submit an assignment late without informing the professor?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! It is important to communicate with the professor if you cannot submit work on time.",
+      "explanationIncorrect": "Incorrect! Always inform your professor if you are unable to submit on time to maintain integrity."
+    },
+    {
+      "question": "Is it acceptable to use unauthorized software during an exam if you think it will help you complete the test?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using unauthorized tools during an exam is cheating and is against academic rules.",
+      "explanationIncorrect": "Incorrect! Using unapproved software during an exam violates academic integrity and is unethical."
+    },
+    {
+      "question": "Is it okay to collaborate with other students on a group project that is supposed to be individual work?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Collaborating on individual work without permission is considered dishonesty and violates guidelines.",
+      "explanationIncorrect": "Incorrect! Individual assignments are meant to be done alone unless explicitly allowed for collaboration."
+    },
+    {
+      "question": "Should you avoid citing sources in your research paper if the ideas are common knowledge?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Even common knowledge should be cited when it is not universally known, to avoid plagiarism.",
+      "explanationIncorrect": "Incorrect! Always cite sources to give credit where it's due, even for commonly known information."
+    },
+    {
+      "question": "Is it ethical to receive help from an online tutor for your homework assignments?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Seeking help from a tutor is acceptable as long as you are learning and not copying the answers.",
+      "explanationIncorrect": "Incorrect! Seeking academic help from a tutor to understand material is ethical, but copying work is not."
+    },
+    {
+      "question": "Is it ethical to ask for an unfair advantage, like extra time during exams, because of personal reasons?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Asking for unfair advantages not supported by the institution's policies is unethical.",
+      "explanationIncorrect": "Incorrect! You must follow institutional guidelines for accommodations to ensure fairness."
+    },
+    {
+      "question": "If you know someone is cheating, is it your responsibility to report them?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Reporting cheating helps maintain fairness and academic integrity in the learning environment.",
+      "explanationIncorrect": "Incorrect! Failing to report cheating undermines fairness and allows dishonest behavior to persist."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67f9f7527055b3f24d546803"
+  },
+  "theme": "Digital and Technological Responsibility",
+  "cards": [
+    {
+      "question": "Is it ethical to share someone's personal information online without their consent?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sharing personal information without consent is a violation of privacy and unethical.",
+      "explanationIncorrect": "Incorrect! Sharing personal details without permission violates privacy rights and ethical guidelines."
+    },
+    {
+      "question": "Is it acceptable to use pirated software for personal or professional use?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using pirated software is illegal and unethical as it infringes on intellectual property rights.",
+      "explanationIncorrect": "Incorrect! Piracy violates software licensing agreements and is considered both unethical and illegal."
+    },
+    {
+      "question": "Is it ethical to collect personal data from users without disclosing it in the privacy policy?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Transparency about data collection is crucial to maintaining ethical standards in technology.",
+      "explanationIncorrect": "Incorrect! Ethical practices require clear disclosure of data collection in privacy policies."
+    },
+    {
+      "question": "Is it responsible to leave your devices unprotected with sensitive information accessible to others?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Leaving devices unprotected is irresponsible, as it can lead to data breaches and privacy violations.",
+      "explanationIncorrect": "Incorrect! Always protect your devices and data to ensure privacy and security."
+    },
+    {
+      "question": "Is it ethical to use someone's password without their permission to access their account?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Accessing someone’s account without permission is a violation of trust and privacy.",
+      "explanationIncorrect": "Incorrect! Using someone else's password without permission is illegal and unethical."
+    },
+    {
+      "question": "Is it acceptable to track someone's online activity without their knowledge or consent?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Tracking someone's online activity without consent is a breach of privacy and ethical principles.",
+      "explanationIncorrect": "Incorrect! Tracking individuals without consent is an invasion of privacy and violates ethical standards."
+    },
+    {
+      "question": "Is it acceptable to spread misinformation online if you believe it will benefit your cause?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Spreading misinformation undermines trust and harms public discourse, regardless of intent.",
+      "explanationIncorrect": "Incorrect! Spreading false information can cause harm and is always unethical, even if done with good intentions."
+    },
+    {
+      "question": "Is it ethical to use a fake online identity to manipulate others in digital spaces?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using fake identities to deceive or manipulate others online is a form of dishonesty and unethical behavior.",
+      "explanationIncorrect": "Incorrect! Online manipulation through fake identities is unethical and harmful to others."
+    },
+    {
+      "question": "Is it responsible to continue using outdated software that is no longer supported or secure?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using outdated software exposes systems to security vulnerabilities and is irresponsible.",
+      "explanationIncorrect": "Incorrect! Keeping software updated is essential to maintaining security and protecting against cyber threats."
+    },
+    {
+      "question": "Is it ethical to use social media to publicly shame someone for their mistakes?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Public shaming can lead to harassment and harm, and is not an ethical way to address conflicts.",
+      "explanationIncorrect": "Incorrect! Publicly shaming someone online can cause significant harm and is unethical."
+    },
+    {
+      "question": "Is it ethical to use someone's copyrighted material without giving credit?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using someone else's work without permission or credit is a violation of copyright law and ethical standards.",
+      "explanationIncorrect": "Incorrect! Using copyrighted material without permission or credit is theft and unethical."
+    },
+    {
+      "question": "Is it acceptable to create and distribute deepfake videos without consent?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Creating and distributing deepfakes without consent can harm individuals and spread false information.",
+      "explanationIncorrect": "Incorrect! Deepfakes can be harmful and misleading when created without consent, violating ethical standards."
+    },
+    {
+      "question": "Is it responsible to engage in cyberbullying or harassment online?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Cyberbullying and harassment are harmful actions that violate basic human dignity and ethics.",
+      "explanationIncorrect": "Incorrect! Engaging in online harassment or bullying is unethical and can cause severe emotional harm."
+    },
+    {
+      "question": "Is it acceptable to track and store users' location data without their knowledge?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Tracking and storing location data without consent breaches privacy and violates ethical standards.",
+      "explanationIncorrect": "Incorrect! Unauthorized tracking of users' location data is unethical and a breach of privacy."
+    },
+    {
+      "question": "Is it ethical to promote products using misleading or deceptive online advertisements?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Deceptive advertising undermines trust and misleads consumers, which is unethical.",
+      "explanationIncorrect": "Incorrect! Misleading advertising is unethical and violates the principles of honesty and transparency."
+    },
+    {
+      "question": "Is it responsible to ignore a software vulnerability and delay its patching?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ignoring vulnerabilities compromises security, putting users and systems at risk, and is irresponsible.",
+      "explanationIncorrect": "Incorrect! Delaying patches for vulnerabilities can expose systems to cyberattacks and is a failure in responsibility."
+    },
+    {
+      "question": "Is it acceptable to share sensitive work-related information on unsecured digital platforms?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sharing sensitive information on unsecured platforms puts data at risk and violates confidentiality agreements.",
+      "explanationIncorrect": "Incorrect! Always secure sensitive work-related information to protect it from unauthorized access."
+    },
+    {
+      "question": "Is it ethical to monitor employees' private communications for performance tracking?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Monitoring private communications without consent invades privacy and is an unethical practice.",
+      "explanationIncorrect": "Incorrect! Monitoring private communications is a violation of privacy and can be considered unethical."
+    },
+    {
+      "question": "Is it responsible to use social media platforms to spread hate speech or discriminatory content?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Spreading hate speech or discriminatory content is harmful, unethical, and violates platform policies.",
+      "explanationIncorrect": "Incorrect! Hate speech and discriminatory content promote division and harm, and are unethical."
+    },
+    {
+      "question": "Is it ethical to use unethical practices for gaining followers or engagement on social media?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using unethical methods, like clickbait or deception, to gain followers violates integrity and ethics.",
+      "explanationIncorrect": "Incorrect! Ethical practices should always be followed when engaging with others on social media."
+    },
+    {
+      "question": "Is it ethical to use artificial intelligence to create biased or discriminatory outcomes?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using AI to produce biased outcomes is unethical and perpetuates discrimination.",
+      "explanationIncorrect": "Incorrect! AI systems must be designed to avoid biases and ensure fairness for all users."
+    },
+    {
+      "question": "Is it acceptable to store users' passwords in plaintext without encryption?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Storing passwords in plaintext without encryption exposes users to significant security risks.",
+      "explanationIncorrect": "Incorrect! Always encrypt passwords to protect users' sensitive information."
+    },
+    {
+      "question": "Is it ethical to use users' personal data for targeted advertising without their consent?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using personal data without consent violates privacy and trust, which is unethical.",
+      "explanationIncorrect": "Incorrect! Consent must always be obtained before using personal data for targeted advertising."
+    },
+    {
+      "question": "Is it responsible to create and distribute software that encourages addictive behaviors?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Creating addictive software can negatively impact users' well-being and is ethically wrong.",
+      "explanationIncorrect": "Incorrect! Software designed to encourage addictive behaviors can harm users mentally and emotionally."
+    },
+    {
+      "question": "Is it acceptable to exploit users' data to manipulate their purchasing decisions?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using data to manipulate decisions without users' knowledge is an unethical practice.",
+      "explanationIncorrect": "Incorrect! Exploiting users' data for manipulation undermines their autonomy and is unethical."
+    },
+    {
+      "question": "Is it ethical to publish someone else's personal information without their consent?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Publishing personal information without consent is a breach of privacy and can cause harm.",
+      "explanationIncorrect": "Incorrect! Publishing personal information without consent is unethical and illegal in many cases."
+    },
+    {
+      "question": "Is it responsible to ignore the environmental impact of electronic waste?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ignoring the environmental impact of e-waste contributes to pollution and harm to ecosystems.",
+      "explanationIncorrect": "Incorrect! Proper disposal and recycling of electronic waste are critical to minimizing environmental harm."
+    },
+    {
+      "question": "Is it acceptable to manipulate search engine algorithms to falsely improve a website's ranking?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Manipulating search engine algorithms is unethical and violates search engine guidelines.",
+      "explanationIncorrect": "Incorrect! Improving a website's ranking should be done through ethical SEO practices, not manipulation."
+    },
+    {
+      "question": "Is it ethical to use a company's proprietary software without a valid license?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using software without a valid license is a violation of intellectual property rights and unethical.",
+      "explanationIncorrect": "Incorrect! Always obtain proper licenses to use software legally and ethically."
+    },
+    {
+      "question": "Is it responsible to share fake news or misinformation on social media platforms?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sharing fake news can harm individuals and society by spreading false information.",
+      "explanationIncorrect": "Incorrect! Misinformation can have serious consequences, so it is essential to verify sources before sharing."
+    },
+    {
+      "question": "Is it ethical to track users' online activity without their knowledge?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Tracking users without their consent violates their privacy and is ethically wrong.",
+      "explanationIncorrect": "Incorrect! Tracking should always be done with users' knowledge and consent to respect their privacy."
+    },
+    {
+      "question": "Is it acceptable for companies to use personal data to create 'profiles' of users for targeted content?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using personal data without consent for profiling is unethical and infringes on user privacy.",
+      "explanationIncorrect": "Incorrect! Personal data should be protected, and profiling should not occur without explicit consent."
+    },
+    {
+      "question": "Is it acceptable to develop algorithms that perpetuate gender, racial, or ethnic biases?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Algorithms should be designed to be fair and free from biases to ensure equality for all users.",
+      "explanationIncorrect": "Incorrect! It's crucial to remove any biases in algorithms to ensure fairness for all individuals."
+    },
+    {
+      "question": "Is it ethical to use facial recognition technology in public spaces without the public's consent?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using facial recognition technology without consent violates individuals' privacy rights.",
+      "explanationIncorrect": "Incorrect! Consent is vital, and people should have control over their data, including their biometric data."
+    },
+    {
+      "question": "Is it acceptable to design applications that intentionally exploit addictive behaviors for profit?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Intentionally creating addictive software to maximize profit is harmful and unethical.",
+      "explanationIncorrect": "Incorrect! Designing apps that exploit addiction is irresponsible and can have detrimental effects on users."
+    },
+    {
+      "question": "Is it responsible to ignore the security risks associated with unpatched software vulnerabilities?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ignoring security risks from unpatched vulnerabilities exposes users and systems to potential attacks.",
+      "explanationIncorrect": "Incorrect! Regularly patching vulnerabilities is a crucial part of maintaining system security and protecting users."
+    },
+    {
+      "question": "Is it acceptable to misuse someone's personal data for financial gain without their permission?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Using personal data for financial gain without permission is a serious violation of privacy and ethics.",
+      "explanationIncorrect": "Incorrect! Misusing personal data without permission is illegal and unethical."
+    },
+    {
+      "question": "Is it ethical to engage in cyberbullying or harassment online?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Cyberbullying and online harassment are harmful and violate basic ethical principles of respect and kindness.",
+      "explanationIncorrect": "Incorrect! Online harassment causes significant harm, and it's important to foster a positive and respectful online environment."
+    },
+    {
+      "question": "Is it acceptable to sell users' data to third parties without informing them?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Selling users' data without their knowledge violates trust and ethical data usage policies.",
+      "explanationIncorrect": "Incorrect! Users should be informed and provide consent before their data is shared or sold."
+    },
+    {
+      "question": "Is it responsible to ignore the environmental cost of data centers and cloud computing infrastructure?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! The environmental impact of data centers should be minimized, and sustainable practices should be prioritized.",
+      "explanationIncorrect": "Incorrect! Data centers and cloud services should be energy-efficient and environmentally responsible."
+    },
+    {
+      "question": "Is it acceptable to develop artificial intelligence systems that are not transparent about how decisions are made?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! AI systems should be transparent to ensure accountability and to avoid biased or unfair decisions.",
+      "explanationIncorrect": "Incorrect! Transparency in AI is essential for trust and to ensure systems are making ethical decisions."
+    },
+    {
+      "question": "Is it responsible to automate jobs without considering the impact on the workforce?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! It's essential to consider the social and economic impact on workers before automating jobs.",
+      "explanationIncorrect": "Incorrect! Automation should be implemented thoughtfully to protect workers and ensure job security."
+    },
+    {
+      "question": "Is it ethical to allow advertisers to track and target children with personalized content?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Children should be protected from manipulative advertising and not subjected to personalized content targeting.",
+      "explanationIncorrect": "Incorrect! Advertising to children should be regulated to protect them from exploitation."
+    },
+    {
+      "question": "Is it acceptable to intentionally design software to be difficult to uninstall or disable?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Software should respect user autonomy, and users should be able to uninstall or disable it at their discretion.",
+      "explanationIncorrect": "Incorrect! Design practices should prioritize user control and freedom to remove unwanted software."
+    },
+    {
+      "question": "Is it ethical to exploit customer data to gain a competitive advantage without proper safeguards?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Exploiting customer data without proper safeguards violates privacy rights and undermines ethical standards.",
+      "explanationIncorrect": "Incorrect! Companies should ensure data is protected and used responsibly, with transparency and consent."
+    },
+    {
+      "question": "Is it responsible to provide users with misleading or deceptive information about data security practices?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Misleading users about data security practices is unethical and erodes trust in technology.",
+      "explanationIncorrect": "Incorrect! Clear, truthful communication about data security is essential for building trust and ensuring user protection."
+    },
+    {
+      "question": "Is it acceptable to manipulate user behavior by exploiting psychological weaknesses in app design?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! It's unethical to manipulate users' behavior by exploiting their psychological vulnerabilities for profit.",
+      "explanationIncorrect": "Incorrect! Ethical design should empower users rather than exploiting their weaknesses for commercial gain."
+    },
+    {
+      "question": "Is it acceptable to allow malicious actors to exploit vulnerabilities in digital systems without taking corrective action?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Organizations must address vulnerabilities swiftly to protect users and systems from malicious attacks.",
+      "explanationIncorrect": "Incorrect! It's crucial to prioritize security and fix vulnerabilities promptly to safeguard users."
+    },
+    {
+      "question": "Is it ethical to allow bias in machine learning algorithms that impact marginalized communities?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Machine learning systems must be designed to be fair and unbiased, ensuring they don't negatively impact vulnerable groups.",
+      "explanationIncorrect": "Incorrect! Algorithms should be tested and adjusted to avoid discrimination against marginalized communities."
+    },
+    {
+      "question": "Is it responsible to ignore the environmental impact of manufacturing electronics without exploring sustainable alternatives?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Electronics manufacturing should consider environmental impact, and sustainability should be a priority in production.",
+      "explanationIncorrect": "Incorrect! Sustainability practices are necessary to reduce electronic waste and environmental damage."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67f9f8087055b3f24d546805"
+  },
+  "theme": "Society, Sustainability & Global Justice",
+  "cards": [
+    {
+      "question": "Is it ethical for companies to prioritize profit over the environmental impact of their operations?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sustainability should be a priority for companies to protect the environment and ensure long-term well-being.",
+      "explanationIncorrect": "Incorrect! Companies must balance profitability with environmental responsibility for a sustainable future."
+    },
+    {
+      "question": "Is it just for developed countries to exploit natural resources from developing countries without fair compensation?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Exploiting resources without fair compensation is unjust and perpetuates inequality between nations.",
+      "explanationIncorrect": "Incorrect! Fair compensation is essential to ensure that developing countries benefit from their resources."
+    },
+    {
+      "question": "Should multinational corporations be required to pay fair wages in countries where labor laws are weak?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Fair wages are a basic human right, and corporations must uphold ethical labor practices regardless of local laws.",
+      "explanationIncorrect": "Incorrect! Corporations should ensure fair wages and good working conditions, regardless of local regulations."
+    },
+    {
+      "question": "Is it acceptable to ignore the social implications of technological advancements like automation and AI?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Technological advancements should be designed with consideration for social impacts, such as job displacement and inequality.",
+      "explanationIncorrect": "Incorrect! Technological progress must be paired with strategies to mitigate negative social effects."
+    },
+    {
+      "question": "Is it ethical for countries to restrict access to vaccines based on financial status or nationality?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Access to life-saving vaccines should be a universal right, irrespective of financial status or nationality.",
+      "explanationIncorrect": "Incorrect! Vaccine distribution should be equitable and accessible to all, especially during global health crises."
+    },
+    {
+      "question": "Should developed countries have a responsibility to provide aid to countries suffering from the effects of climate change?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Developed countries, having contributed the most to climate change, should assist vulnerable nations with mitigation and adaptation efforts.",
+      "explanationIncorrect": "Incorrect! Climate change is a global issue, and developed countries must support those most affected by it."
+    },
+    {
+      "question": "Is it just for companies to use cheap labor in low-wage countries to manufacture goods that are sold in wealthier markets?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Exploiting cheap labor is unethical and contributes to global inequality. Companies must provide fair wages and improve working conditions.",
+      "explanationIncorrect": "Incorrect! Fair labor practices and ethical sourcing are crucial to ensuring workers are treated justly."
+    },
+    {
+      "question": "Should sustainability practices, like using renewable energy and reducing waste, be mandatory for all businesses?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Businesses have a responsibility to adopt sustainable practices to reduce environmental harm and promote a healthier planet.",
+      "explanationIncorrect": "Incorrect! Sustainability should be integrated into business practices to protect the environment for future generations."
+    },
+    {
+      "question": "Is it ethical to use advertising techniques that manipulate vulnerable populations, such as low-income families?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Manipulating vulnerable populations for profit is unethical. Advertising should be transparent and fair to all demographics.",
+      "explanationIncorrect": "Incorrect! Advertising should not exploit vulnerable groups; instead, it should prioritize ethics and fairness."
+    },
+    {
+      "question": "Should developed nations be responsible for providing financial support to rebuild countries affected by natural disasters, such as hurricanes or earthquakes?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Global solidarity and support are necessary for countries that face devastating natural disasters, particularly those with fewer resources.",
+      "explanationIncorrect": "Incorrect! Financial aid and assistance should be provided to rebuild affected regions and help them recover."
+    },
+    {
+      "question": "Should companies be held accountable for the environmental damage caused by their products throughout their lifecycle?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Companies should take responsibility for the full lifecycle of their products, including environmental impacts.",
+      "explanationIncorrect": "Incorrect! Accountability should extend beyond production to include disposal and recycling of products."
+    },
+    {
+      "question": "Is it ethical for governments to prioritize economic growth over social equity and environmental protection?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sustainable development must balance economic growth with social equity and environmental protection.",
+      "explanationIncorrect": "Incorrect! Economic growth should be pursued while also ensuring social equity and environmental sustainability."
+    },
+    {
+      "question": "Should global trade agreements include clauses that protect the rights of workers in developing countries?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Trade agreements should prioritize workers' rights, ensuring fair wages and good working conditions globally.",
+      "explanationIncorrect": "Incorrect! Global trade agreements should always protect workers’ rights, ensuring fairness and dignity in work."
+    },
+    {
+      "question": "Is it just for wealthy countries to impose trade tariffs on developing countries to protect their own industries?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Imposing tariffs can prevent fair trade and harm the economic development of poorer countries.",
+      "explanationIncorrect": "Incorrect! Wealthy countries should support fair trade practices that enable developing nations to thrive."
+    },
+    {
+      "question": "Should corporations be required to disclose the environmental and social impact of their operations to the public?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Transparency is essential for corporations to demonstrate their commitment to ethical and sustainable practices.",
+      "explanationIncorrect": "Incorrect! Disclosure is important for consumers and investors to make informed decisions about a company’s practices."
+    },
+    {
+      "question": "Is it ethical to prioritize the economic development of a country at the cost of its cultural heritage and traditions?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Economic development should not come at the expense of cultural preservation and identity.",
+      "explanationIncorrect": "Incorrect! Cultural heritage is an integral part of a nation's identity and must be preserved while pursuing development."
+    },
+    {
+      "question": "Should international organizations like the UN have the authority to enforce global sustainability standards on individual nations?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Global challenges like climate change require unified action and global enforcement of sustainability standards.",
+      "explanationIncorrect": "Incorrect! Global cooperation is essential to address issues that transcend national borders, such as climate change."
+    },
+    {
+      "question": "Is it ethical to exploit the labor of migrants who work in hazardous conditions for low wages?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Exploiting vulnerable workers is unethical. Migrants deserve safe working conditions and fair compensation.",
+      "explanationIncorrect": "Incorrect! All workers, including migrants, deserve fair wages and safe working conditions."
+    },
+    {
+      "question": "Should countries with high carbon emissions bear the financial responsibility for mitigating climate change?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Countries that have historically contributed the most to carbon emissions should lead the efforts to mitigate climate change.",
+      "explanationIncorrect": "Incorrect! Developed countries with higher emissions should take responsibility for the global climate crisis."
+    },
+    {
+      "question": "Is it fair for wealthy countries to dictate the terms of global climate action without considering the needs of poorer nations?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Global climate action must be equitable, considering the different capacities and needs of wealthy and developing nations.",
+      "explanationIncorrect": "Incorrect! Climate action should involve all countries, with fairness and consideration for the needs of poorer nations."
+    },
+    {
+      "question": "Should countries with high levels of pollution be required to compensate nations that are negatively impacted by environmental changes?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Countries that contribute significantly to pollution should compensate those affected by their actions, promoting fairness.",
+      "explanationIncorrect": "Incorrect! Nations causing environmental harm should take responsibility and compensate those who bear the consequences."
+    },
+    {
+      "question": "Is it ethical for wealthy nations to have a larger share of resources while poorer nations face scarcity?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ethical resource distribution should ensure equitable access for all nations, regardless of wealth.",
+      "explanationIncorrect": "Incorrect! Resources should be distributed fairly, and wealthier nations should support developing countries in accessing them."
+    },
+    {
+      "question": "Should governments impose taxes on carbon emissions to fund renewable energy projects?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Carbon taxes are an effective way to incentivize sustainability and fund the transition to cleaner energy sources.",
+      "explanationIncorrect": "Incorrect! Taxing carbon emissions encourages sustainable practices and supports renewable energy development."
+    },
+    {
+      "question": "Is it fair for multinational corporations to avoid taxes by moving operations to countries with low tax rates?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Multinational corporations should contribute to the economies in which they operate, supporting the welfare of local communities.",
+      "explanationIncorrect": "Incorrect! Corporations should be held accountable for paying fair taxes in the countries where they generate profits."
+    },
+    {
+      "question": "Should countries with high poverty rates be allowed to bypass certain environmental regulations to support economic growth?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sustainable development must balance economic growth with environmental protection, even in low-income countries.",
+      "explanationIncorrect": "Incorrect! Economic growth should not come at the expense of the environment, especially in countries already facing poverty."
+    },
+    {
+      "question": "Should large multinational companies be required to invest in local community projects in the countries where they operate?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Multinational companies should contribute positively to the local communities and economies where they do business.",
+      "explanationIncorrect": "Incorrect! Companies benefiting from local resources should give back through investments in community development and social responsibility."
+    },
+    {
+      "question": "Is it ethical to allow corporations to use cheap labor in developing countries while selling products in wealthier nations?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ethical business practices require fair wages and safe working conditions for all workers, regardless of the country they work in.",
+      "explanationIncorrect": "Incorrect! Exploiting cheap labor for profit is unethical, and workers deserve fair compensation and safe working conditions."
+    },
+    {
+      "question": "Should global efforts to combat climate change prioritize the needs of developing countries over those of developed countries?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Developing countries often suffer the most from climate change and should receive the support they need to adapt and mitigate its effects.",
+      "explanationIncorrect": "Incorrect! Global climate efforts should focus on helping developing countries address the disproportionate impacts they face."
+    },
+    {
+      "question": "Is it just for large corporations to prioritize profits over environmental sustainability?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Companies should balance profit-making with responsibility toward the environment, prioritizing sustainability in their business practices.",
+      "explanationIncorrect": "Incorrect! Ethical corporations should integrate environmental sustainability into their core operations to reduce negative impacts."
+    },
+    {
+      "question": "Should wealthy countries provide financial aid to help mitigate the impact of climate change in vulnerable nations?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Wealthier countries, which have historically contributed to climate change, have a moral responsibility to assist those most affected.",
+      "explanationIncorrect": "Incorrect! Financial aid is crucial to support vulnerable nations in addressing the challenges posed by climate change."
+    },
+    {
+      "question": "Should the use of single-use plastic be banned globally to reduce environmental harm?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Banning single-use plastics is an essential step in reducing waste and protecting the environment.",
+      "explanationIncorrect": "Incorrect! Single-use plastics contribute significantly to environmental pollution and should be banned to protect our planet."
+    },
+    {
+      "question": "Is it fair for developed nations to consume most of the world's resources while less-developed nations struggle with scarcity?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Developed nations should contribute to equitable resource distribution and support developing nations in their growth.",
+      "explanationIncorrect": "Incorrect! Fair resource distribution ensures that all nations, regardless of development level, have access to necessary resources."
+    },
+    {
+      "question": "Should companies that pollute the environment be legally required to pay for cleanup efforts?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Companies responsible for environmental damage should be held accountable and fund the restoration of affected ecosystems.",
+      "explanationIncorrect": "Incorrect! Pollution cleanup should be funded by the companies responsible for the damage they cause to the environment."
+    },
+    {
+      "question": "Is it ethical for companies to exploit natural resources in developing countries without considering the environmental impact?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ethical companies must prioritize sustainability and environmental conservation, even when operating in developing countries.",
+      "explanationIncorrect": "Incorrect! Exploiting natural resources without regard for the environment harms both the local community and the planet."
+    },
+    {
+      "question": "Should global wealth redistribution efforts focus on eradicating poverty in developing nations?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Addressing poverty in developing nations is essential for global justice and ensuring equal opportunities for all.",
+      "explanationIncorrect": "Incorrect! Wealth redistribution efforts should prioritize eradicating poverty and providing resources to developing nations."
+    },
+    {
+      "question": "Is it fair for multinational companies to exploit low-wage labor in developing countries while selling goods in wealthier nations?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Ethical labor practices must ensure fair wages and safe working conditions for workers, regardless of the country's economic status.",
+      "explanationIncorrect": "Incorrect! Exploiting low-wage labor in developing countries is unethical and contributes to income inequality."
+    },
+    {
+      "question": "Should governments prioritize the development of green energy technologies over the expansion of fossil fuel industries?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Investing in green energy technologies is essential for sustainable development and reducing the negative impact of fossil fuels on the environment.",
+      "explanationIncorrect": "Incorrect! Fossil fuels contribute to climate change and environmental degradation, making it crucial to prioritize renewable energy."
+    },
+    {
+      "question": "Should the international community take more drastic actions to address the refugee crisis caused by climate change?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Climate change-induced displacement is a growing global crisis, and it requires urgent, coordinated international action to protect vulnerable populations.",
+      "explanationIncorrect": "Incorrect! The refugee crisis caused by climate change requires immediate action to ensure the safety and well-being of those affected."
+    },
+    {
+      "question": "Is it acceptable for wealthy nations to prioritize their own national interests over global environmental concerns?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Global environmental challenges require cooperation and collective action, and wealthier nations must prioritize the global good over national interests.",
+      "explanationIncorrect": "Incorrect! National interests should not overshadow the importance of addressing global environmental challenges for the benefit of all."
+    },
+    {
+      "question": "Should countries with high levels of inequality be required to implement policies to reduce wealth disparities?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Countries with high inequality should adopt policies that address wealth disparities and promote social and economic justice.",
+      "explanationIncorrect": "Incorrect! Reducing wealth inequality is essential for creating a fair and just society for all citizens."
+    },
+    {
+      "question": "Should governments impose stricter regulations on industries that contribute to deforestation?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Stricter regulations on industries causing deforestation are essential to protect biodiversity and combat climate change.",
+      "explanationIncorrect": "Incorrect! Deforestation has devastating effects on ecosystems and must be regulated to preserve forests and wildlife."
+    },
+    {
+      "question": "Is it ethical to prioritize economic growth over environmental sustainability?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Sustainable development should balance economic growth with environmental preservation to ensure long-term well-being for all.",
+      "explanationIncorrect": "Incorrect! Economic growth should not come at the expense of the environment, as it jeopardizes future generations."
+    },
+    {
+      "question": "Should wealthy nations contribute more to addressing global climate change, given their higher emissions historically?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Wealthy nations, with their historical contribution to global emissions, have a greater responsibility to help mitigate climate change.",
+      "explanationIncorrect": "Incorrect! Wealthier nations must take greater responsibility for climate action due to their higher historical emissions."
+    },
+    {
+      "question": "Is it right for multinational corporations to profit from extractive industries while local communities face negative environmental impacts?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Extractive industries should operate responsibly and share the benefits with local communities, ensuring environmental protection and social equity.",
+      "explanationIncorrect": "Incorrect! Profiting from harmful practices without considering the local communities and environment is unethical."
+    },
+    {
+      "question": "Should educational institutions be more responsible for promoting sustainability and climate change awareness?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Educational institutions play a key role in raising awareness about sustainability and climate change, preparing future leaders to tackle these issues.",
+      "explanationIncorrect": "Incorrect! Educators should be at the forefront of promoting sustainability and raising awareness about climate change."
+    },
+    {
+      "question": "Is it ethical to support industries that use child labor in developing countries, even if they provide economic benefits?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Exploiting children for labor, even for economic gain, is unethical and violates human rights. Ethical practices should come first.",
+      "explanationIncorrect": "Incorrect! Child labor exploitation is never acceptable, even if it brings short-term economic benefits."
+    },
+    {
+      "question": "Should we encourage people to adopt more sustainable and plant-based diets to reduce environmental impact?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Plant-based diets are more sustainable, requiring fewer resources and producing lower greenhouse gas emissions compared to animal-based diets.",
+      "explanationIncorrect": "Incorrect! A more sustainable diet that reduces environmental impact involves consuming fewer animal products and more plant-based foods."
+    },
+    {
+      "question": "Is it acceptable for governments to ignore the needs of marginalized communities in the pursuit of national economic growth?",
+      "correctAnswer": "No",
+      "explanationCorrect": "Correct! Governments should prioritize the needs of marginalized communities to ensure equitable growth and social justice for all citizens.",
+      "explanationIncorrect": "Incorrect! Ignoring marginalized communities in economic policies leads to greater inequality and social unrest."
+    },
+    {
+      "question": "Should global efforts to address poverty and inequality include not only financial aid but also support for local empowerment and self-sustainability?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Empowering local communities through education, resources, and self-sustainability is key to long-term poverty reduction and global justice.",
+      "explanationIncorrect": "Incorrect! Addressing poverty requires not just financial aid, but also the empowerment of local communities to sustain themselves."
+    },
+    {
+      "question": "Should nations prioritize the rights and well-being of future generations when making environmental policies today?",
+      "correctAnswer": "Yes",
+      "explanationCorrect": "Correct! Environmental policies must consider the needs of future generations to ensure they inherit a healthy and sustainable planet.",
+      "explanationIncorrect": "Incorrect! The well-being of future generations must be a core consideration in all environmental policies."
+    }
+  ]
+}]
