@@ -38,7 +38,7 @@ mongoose
   });
 
 // API Routes
-app.use("/api", authRoutes); // Auth routes
+app.use("/api", authRoutes); // Auth routes (login, signup, logout)
 app.use('/api', quizRoutes); // Quiz-related routes
 app.use('/api', flipCardRoutes); // Flip card-related routes
 app.use('/api/debate', debateRoutes); // Debate-related routes
